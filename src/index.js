@@ -32,3 +32,4 @@ $(document).ready(function () {
         let thisDay = dd + '/' + mm + '/' + yyyy;
         return thisDay;
       }
+    });

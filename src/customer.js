@@ -1,7 +1,9 @@
 import domUpdates from "./domUpdates";
 
 class Customer {
-    constructor ()
+    constructor (){
+
+    }
 }
 
 export default Customer

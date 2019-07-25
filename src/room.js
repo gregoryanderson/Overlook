@@ -1,7 +1,9 @@
 import domUpdates from "./domUpdates";
 
 class Rooms {
-    constructor ()
+    constructor (){
+        
+    }
 
 }
 

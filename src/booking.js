@@ -1,7 +1,9 @@
 import domUpdates from "./domUpdates";
 
 class Booking {
-    constructor ()
+    constructor (){
+        
+    }
 }
 
 export default Booking
