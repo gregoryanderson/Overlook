@@ -1,8 +1,8 @@
-import RoomService from '../src/RoomService'
-import { roomServices, menu } from '../data'
+import Main from '../src/Main'
 import chai from 'chai';
 import spies from 'chai-spies'
 import domUpdates from '../src/domUpdates'
+import { bookings, rooms, roomServices } from '../data'
 const expect = chai.expect;
 
 
