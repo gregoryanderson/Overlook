@@ -1,4 +1,4 @@
-import RoomService from '../src/RoomService'
+import RoomServiceRepo from '../src/roomServiceRepo'
 import { roomServices, menu } from '../data'
 import chai from 'chai';
 import spies from 'chai-spies'

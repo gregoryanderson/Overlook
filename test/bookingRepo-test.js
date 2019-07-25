@@ -1,4 +1,4 @@
-import BookingRepo from '../src/BookingsRepo'
+import BookingRepo from '../src/BookingRepo'
 import chai from 'chai';
 import spies from 'chai-spies'
 import domUpdates from '../src/domUpdates'
