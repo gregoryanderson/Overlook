@@ -13,6 +13,9 @@
     <h3 class="header--date">
       Date
     </h3>
+    <h3 id="header--selected-guest">
+        Selected Guest
+      </h3>
     <!-- <img src="/images/turing-logo.png" alt="turing logo" height="100px" width="100px"> -->
     <ul class="tabs__ul">
       <li class="tabs__li--main">Overview</li>
@@ -43,6 +46,35 @@
 
 
 
+    <article id="tab--guests" class="tab--information">
+      <table>
+        <h3 id="guests__h3--searched">Search For Guest</h3>
+        <input type="search" id="guests__input--search">
+        <!-- <button id="guests__btn--search">Search Guests</button> -->
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Select</th>
+            </tr>
+          </thead>
+          <tbody id="guests__tbody--searched">
+          </tbody>
+        </table>  
+      <table>
+        <h3 id="guests__h3">Guests</h3>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <!-- <th>Date</th> -->
+          </tr>
+        </thead>
+        <tbody id="guests__tbody">
+        </tbody>
+      </table>
+    </article>
+
 
 
 
@@ -65,7 +97,7 @@
         </tbody>
       </table>
       <table>
-        <h3 id="orders__h3--customer">Food Orders</h3>
+        <h3 id="orders__h3--customer">Food Orders Today</h3>
         <thead>
           <tr>
             <th>Name</th>
@@ -73,7 +105,7 @@
             <th>Order</th>
           </tr>
         </thead>
-        <tbody id="order__tbody--menu">
+        <tbody id="orders__tbody--today">
         </tbody>
       </table>
       <p id="orders--total"></p>
@@ -102,7 +134,7 @@
           <th>Date Booked</th>
         </tr>
         </thead>
-        <tbody id="room__currently-booked">
+        <tbody id="room__tbody--booked">
         </tbody>
       </table>
       <section class="room__section--booked">
@@ -129,7 +161,7 @@
               <th>Cost Per Night</th>
             </tr>
           </thead>
-          <tbody id="rooms__tbody">
+          <tbody id="rooms__tbody--available">
           </tbody>
         </table>
       </section>
