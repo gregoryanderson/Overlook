@@ -13,7 +13,6 @@ import Main from '../src/main';
 // import domUpdates from './domUpdates';
 // import data from './data'
 
-console.log('This is the JavaScript entry file - your code begins here.');
 
 // import Admin from './Admin';
 
@@ -43,7 +42,6 @@ Promise.all([customers, services, bookings, rooms])
     allData['rooms'] = values[3];
     return allData;
   })
-  .then(console.log(allData))
   .catch(error => console.log(`Error in promises ${error}`));
 
 $(document).ready(function () {
@@ -56,7 +54,7 @@ $(document).ready(function () {
     let customerBooking;
 
     
-    const todaysDate = () => {
+    const dateToday = () => {
       let today = new Date();
       let dd = today.getDate();
       let mm = today.getMonth() + 1;
@@ -70,13 +68,12 @@ $(document).ready(function () {
         mm = '0' + mm
       }
       
-      let thisDay = dd + '/' + mm + '/' + yyyy;
+      let thisDay = yyyy + '/' + mm + '/' + dd;
       return thisDay;
     };
 
 
     setTimeout( () => {
-      main = new Main(allData.customers, allData.bookings, allData.services, allData.rooms, todaysDate())
-      console.log(main)
-    }, 3000);
+      main = new Main(allData.customers, allData.bookings, allData.services, allData.rooms, dateToday())
+    }, 1000);
   });
