@@ -1,13 +1,159 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Webpack Starter Kit</title>
+    <title>Overlook: How May I Help You?</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Asap:400,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
+    <h1>OverLook</h1>
+    <h2>How May I Help You?</h2>
+    <h3 class="header--date">
+      Date
+    </h3>
+    <!-- <img src="/images/turing-logo.png" alt="turing logo" height="100px" width="100px"> -->
+    <ul class="tabs__ul">
+      <li class="tabs__li--main">Overview</li>
+      <li class="tabs__li--customers">Customers</a></li>
+      <li class="tabs__li--bookings">Bookings</a></li>
+      <li class="tabs__li--services">Services</a></li>
+      <li class="tabs__li--rooms">Rooms</a></li>
+    </ul>
 
-    <img src="/images/turing-logo.png" alt="turing logo" height="100px" width="100px">
 
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+
+
+
+
+
+
+    <article id="tab--main" class="tab--information active">
+      <p id="main__avail-rooms"></p>
+      <p id="main__revenue-today"></p>
+      <p id="main__charges-today"></p>
+      <p id="main__occupied-rate"></p>
+      <p id="rooms__booking-high-date"></p>
+      <p id="rooms__booking-low-date"></p>
+    </article>
+
+
+
+
+
+
+
+
+
+
+
+
+    <article id="tab--orders" class="tab--information">
+      <input type="date" id="orders__input--date">
+      <button id="orders__btn--search">Search Orders</button>
+      <table>
+        <h3 id="orders__h3--all">Food Orders</h3>
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Cost</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="orders__tbody">
+        </tbody>
+      </table>
+      <table>
+        <h3 id="orders__h3--customer">Food Orders</h3>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Order</th>
+          </tr>
+        </thead>
+        <tbody id="order__tbody--menu">
+        </tbody>
+      </table>
+      <p id="orders--total"></p>
+    </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <article id="tab--rooms" class="tab--information">
+      <table id="rooms__table--customer">
+          <h3 id="room__h3--reservations">Reservations</h3>
+      <thead>
+        <tr>
+          <th>Room Number</th>
+          <th>Date Booked</th>
+        </tr>
+        </thead>
+        <tbody id="room__currently-booked">
+        </tbody>
+      </table>
+      <section class="room__section--booked">
+        <form id="room__form--booked">
+          <legend>Book A Room</legend>
+          <label><input type="checkbox" name="room-type" value="residential suite"> Residential Suite</label>
+          <label><input type="checkbox" name="room-type" value="junior suite"> Junior Suite</label>
+          <label><input type="checkbox" name="room-type" value="suite"> Basic Suite</label>
+          <label><input type="checkbox" name="room-type" value="single room"> Single Room</label>
+          <label>
+            Date To Book
+            <input type="date" id="room-book-date">
+          </label>
+          <button id="room__btn--find-rooms" type="submit">Find Rooms</button>
+        </form>
+        <table id="room__table--rooms-available">
+          <h3 id="customer--rooms-available">Rooms Available</h3>
+          <thead>
+            <tr>
+              <th>Room Number</th>
+              <th>Bed Size</th>
+              <th>Number of Beds</th>
+              <th>Bidet</th>
+              <th>Cost Per Night</th>
+            </tr>
+          </thead>
+          <tbody id="rooms__tbody">
+          </tbody>
+        </table>
+      </section>
+    </article>
+
+
+
+
+
+
+
+
+
+
+ 
+      <!-- <article id="tab__customers" class="tab-information">
+        <input id="tab__input" type="search" placeholder="Search Customers">
+        <ul class="tab__ul">
+          <li id="no-users">No Users Found</li>
+        </ul>
+      </article> -->
+
+
+
+
   </body>
 </html>

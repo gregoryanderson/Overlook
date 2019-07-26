@@ -1,6 +1,46 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+$primary-background:#bbdefb;
+
+* {
+  border: 1px solid red;
+  color: #333;
+  font-family: 'Asap', sans-serif;
+}
 
 body {
   background-color: $primary-background;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    background: #90caf9;
+    margin: 0;
+    padding: 11px 40px;
+    border-radius: 10px 10px 0 0;
+    color: #0d47a1;
+    cursor: pointer;
+    font-size: 1em;
+    &:hover {
+      color: #fff;
+      background: #666;
+    }
+};
+
+.tab--information {
+  background: #ededed;
+  border-radius: 0 0 10px 10px;
+  // display: none;
+  padding: 15px;
+}
+
+.tab--information.active {
+  display: flex;
+  height: 400px;
+  justify-content: center;
 }
