@@ -1,4 +1,5 @@
 import domUpdates from "./domUpdates";
+import Customer from "./Customer";
 
 class GuestRepo {
     constructor (userData){
@@ -14,11 +15,10 @@ class GuestRepo {
             domUpdates.displaySearchedUsers(filteredGuests)
             return filteredGuests;
         } else {
-            // domUpdates.newGuestPrompt()
-            console.log('hi')
+            domUpdates.newGuestReminder()
         }
     }
-
+    
     updateToDom(){
         domUpdates.displayAllGuests(this.data)
     }

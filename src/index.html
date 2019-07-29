@@ -60,7 +60,9 @@
           </thead>
           <tbody id="guests__tbody--searched">
           </tbody>
-        </table>  
+        </table> 
+        <section id="guests__section--new-guest">
+        </section> 
       <table>
         <h3 id="guests__h3">Guests</h3>
         <thead>
@@ -70,7 +72,7 @@
             <!-- <th>Date</th> -->
           </tr>
         </thead>
-        <tbody id="guests__tbody">
+        <tbody id="guests__tbody--specific">
         </tbody>
       </table>
     </article>
@@ -93,21 +95,37 @@
             <th>Date</th>
           </tr>
         </thead>
-        <tbody id="orders__tbody">
+        <tbody id="orders__tbody--searched">
         </tbody>
       </table>
       <table>
         <h3 id="orders__h3--customer">Food Orders Today</h3>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Cost</th>
             <th>Order</th>
+            <th>Cost</th>
+            <!-- <th>Name</th> -->
           </tr>
         </thead>
         <tbody id="orders__tbody--today">
         </tbody>
       </table>
+      <table>
+        <h3 id="orders__h3--guest">Room Service for Specific Guest</h3>
+        <thead>
+          <tr>
+            <th>Order</th>
+            <th>Cost</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="orders__tbody--guest">
+        </tbody>
+      </table>
+          <section id="orders__section--total">
+          </section>
+          <section id="orders__section--new-order">
+          </section> 
       <p id="orders--total"></p>
     </article>
 
@@ -120,25 +138,66 @@
 
 
 
-
-
-
-
-
+    
+    
+    
+    
+    
     <article id="tab--rooms" class="tab--information">
-      <table id="rooms__table--customer">
-          <h3 id="room__h3--reservations">Reservations</h3>
-      <thead>
-        <tr>
-          <th>Room Number</th>
-          <th>Date Booked</th>
-        </tr>
+      <table>
+        <h3 id="rooms__h3--guest">All Bookings for Specific Guest</h3>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Room</th>
+            <!-- <th>Date</th> -->
+          </tr>
         </thead>
-        <tbody id="room__tbody--booked">
+        <tbody id="rooms__tbody--guest">
         </tbody>
       </table>
-      <section class="room__section--booked">
-        <form id="room__form--booked">
+          <section id="rooms__section--create-booking">
+          </section>
+                              <table>
+                                  <h3 id="rooms__h3--todays-booking">Todays Bookings for Specific Guest</h3>
+                                  <thead>
+                                    <tr>
+                                      <th>Name</th>
+                                      <th>Room</th>
+                                      <!-- <th>Date</th> -->
+                                    </tr>
+                                  </thead>
+                                  <tbody id="rooms__tbody--todays-booking">
+                                  </tbody>
+                                </table>
+                                <section id="rooms__section--new-order">
+                                </section>
+                                    <section id="rooms__section--new-orders">
+                                <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Name</th>
+                                        <th>Room</th>
+                                        <!-- <th>Date</th> -->
+                                      </tr>
+                                    </thead>
+                                    <tbody id="rooms__tbody--todays-orders">
+                                    </tbody>
+                                  </table>
+                                    </section> 
+      <table id="rooms__table--customer">
+          <h3 id="room__h3--reservations">Reservations Today</h3>
+          <thead>
+            <tr>
+              <th>Room Number</th>
+              <th>Date Booked</th>
+            </tr>
+          </thead>
+          <tbody id="room__tbody--booked">
+          </tbody>
+        </table>
+        <section class="room__section--booked">
+          <form id="room__form--booked">
           <legend>Book A Room</legend>
           <label><input type="checkbox" name="room-type" value="residential suite"> Residential Suite</label>
           <label><input type="checkbox" name="room-type" value="junior suite"> Junior Suite</label>
@@ -154,11 +213,12 @@
           <h3 id="customer--rooms-available">Rooms Available</h3>
           <thead>
             <tr>
-              <th>Room Number</th>
+              <th>Room</th>
+              <th>Type</th>
               <th>Bed Size</th>
-              <th>Number of Beds</th>
+              <th>Beds</th>
               <th>Bidet</th>
-              <th>Cost Per Night</th>
+              <th>Cost</th>
             </tr>
           </thead>
           <tbody id="rooms__tbody--available">

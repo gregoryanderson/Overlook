@@ -1,14 +1,15 @@
 import domUpdates from "./domUpdates";
 
 class Main {
-  constructor(customers, bookings, services, rooms, date) {
+  constructor(customers, bookings, services, rooms, date, currentCustomer) {
     this.customers = customers.users;
     this.bookings = bookings.bookings;
     this.services = services.roomServices;
     this.rooms = rooms.rooms;
     this.date = date;
-    console.log(this);
+    this.currentCustomer = null;
     this.info = this.updateToDom(date);
+    console.log(this.rooms)
   }
 
   roomsAvailable(specDate) {

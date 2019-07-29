@@ -32,6 +32,17 @@ class BookingRepo {
       })
   }
 
+  pushBookingIntoBookingsArray(booking, bookedRoom){
+    console.log(booking)
+    console.log(bookedRoom)
+    this.bookings.push(booking)
+    console.log(this.bookings)
+  }
+
+  findCorrectRoom(room){
+    return this.rooms.find(item => item.number == room);
+  }
+
   updateToDom() {
     domUpdates.displayBookingsForToday(this.sortBookingsByDate(this.date));
     domUpdates.displayRoomsAvailableForToday(this.filterRoomsAvailableToday(this.date));
