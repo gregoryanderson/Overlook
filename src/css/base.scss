@@ -35,7 +35,7 @@ li {
 .tab--information {
   background: #ededed;
   border-radius: 0 0 10px 10px;
-  // display: none;
+  display: none;
   padding: 15px;
 }
 
@@ -45,4 +45,7 @@ li {
   justify-content: center;
 }
 
+.tab.active {
+  background-color: dodgerBlue
+}
 

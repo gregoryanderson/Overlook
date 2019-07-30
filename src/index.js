@@ -170,8 +170,16 @@ $(document).ready(function() {
     return dateArray[0] + '/' + dateArray[1] + '/' + dateArray[2];
   }
 
-  $('#tabs__ul').on('click', function (){
-    console.log('linked')
+  $('.tab').on('click', function (){
+    let tabSelector = $(this).data('tab');
+    //remove active class from active class
+    $('.active').removeClass('active')
+    //add active class to the tab contents with tab selector
+    $(`#${tabSelector}`).addClass('active')
+    //remove active class from old active tab
+
+    //add active class to new active tab
+    $(this).addClass('active')
   })
 
   // function findCorrectRoom(room){
