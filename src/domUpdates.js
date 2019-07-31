@@ -47,7 +47,6 @@ const domUpdates = {
       $("#orders__tbody--today").text("There are no orders today");
     } else {
       todaysOrders.forEach(order => {
-        $("#orders__tbody--today").text("");
         $("#orders__tbody--today").append(`<tr>
         <td>${order.food}</td><td>$${order.totalCost}</td>
             </tr>`);
