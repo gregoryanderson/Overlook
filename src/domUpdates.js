@@ -1,8 +1,12 @@
 import $ from "jquery";
-import RoomService from "./RoomService";
+
 
 const domUpdates = {
   displayDate() {},
+
+  displayDate(date){
+    $('.header--date').text(date)
+  },
 
   displayRoomsAvailable(rooms) {
     $("#main__avail-rooms").html(`<h3>There are ${rooms} available.</h3>`);

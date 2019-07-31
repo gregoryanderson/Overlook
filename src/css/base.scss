@@ -32,20 +32,45 @@ li {
     }
 };
 
-.tab--information {
-  background: #ededed;
-  border-radius: 0 0 10px 10px;
-  display: none;
-  padding: 15px;
-}
 
-.tab--information.active {
-  display: flex;
-  height: 400px;
-  justify-content: center;
-}
+// #tab--main,
+// #tab--guests,
+// #tab--orders,
+// #tab--rooms {
+//   display: block
+// }
+
+// #tab--main p,
+// #tab--main p h3 {
+//   margin: 0
+// }
 
 .tab.active {
   background-color: dodgerBlue
 }
 
+.button {
+  &:hover {
+    background-color: rebeccapurple;
+  }
+}
+
+.rooms__button--service {
+  @extend .button
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ccc;
+}
+
+.tab--information {
+  background: #ededed;
+  border-radius: 0 0 10px 10px;
+  display: none;
+  padding: 15px;
+  &.active {
+    display: block;
+    height: 400px;
+    justify-content: center;
+  }
+}

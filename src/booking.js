@@ -31,17 +31,4 @@ class Booking {
   }
 }
 
-// findTotalCostOfAllBookingsBySpecificGuest(guest){
-//     console.log(this.bookings)
-//     let specificBookingsCost = this.bookings.filter(booking => {
-//         if(parseInt(guest.id) === booking.userID){
-//             return booking
-//         }
-//     }).reduce((totalCost, booking) => {
-//         totalCost += booking.cost
-//         return totalCost
-//     }, 0)
-//     console.log(specificBookingsCost)
-//     domUpdates.displayTotalBookingsCostForSpecificUser(specificBookingsCost)
-// }
 export default Booking;

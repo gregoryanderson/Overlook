@@ -12,12 +12,6 @@ class RoomServiceRepo {
     return this.services.filter(order => order.date == specDate);
   }
 
-  // findUserForRoomService(specId){
-  //   this.guests.find(guest => {
-  //     guest.id === specId
-  //   })
-  // }
-
   updateToDom() {
     domUpdates.displayRoomServiceOrdersForToday(
       this.filterOrdersByDate(this.date)

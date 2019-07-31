@@ -47,10 +47,9 @@
 
 
     <article id="tab--guests" class="tab--information">
-      <table>
-        <h3 id="guests__h3--searched">Search For Guest</h3>
-        <input type="search" id="guests__input--search">
-        <!-- <button id="guests__btn--search">Search Guests</button> -->
+      <h3 id="guests__h3--searched">Search For Guest</h3>
+      <input type="search" id="guests__input--search">
+      <table id="guests__table--searched">
           <thead>
             <tr>
               <th>Name</th>
@@ -62,19 +61,21 @@
           </tbody>
         </table> 
         <section id="guests__section--new-guest">
+          <p>Or, Please Enter a Name to Create a New Guest.</p>
+          <input type="text" id="guests__input--create">
+          <button id="guests__button--create">Create</button>
         </section> 
-      <table>
+      <!-- <table>
         <h3 id="guests__h3">Guests</h3>
         <thead>
           <tr>
             <th>Name</th>
             <th>ID</th>
-            <!-- <th>Date</th> -->
           </tr>
         </thead>
         <tbody id="guests__tbody--specific">
         </tbody>
-      </table>
+      </table> -->
     </article>
 
 

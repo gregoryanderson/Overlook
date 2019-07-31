@@ -1,6 +1,5 @@
 import $ from "jquery";
 import "./css/base.scss";
-// import domUpdates from './domUpdates';
 
 import Main from "../src/main";
 import GuestRepo from "./guestRepo";
@@ -11,7 +10,6 @@ import RoomService from "../src/RoomService";
 import BookingRepo from "./BookingRepo";
 import Booking from "./Booking";
 import domUpdates from "./domUpdates";
-// import data from './data'
 
 // import Admin from './Admin';
 
@@ -100,6 +98,7 @@ $(document).ready(function() {
   }, 1000);
 
   $("#guests__input--search").on("input", function() {
+    $('#guests__table--searched').show()
     let guestSearchInput = $("#guests__input--search").val();
     console.log(guestSearchInput);
     if (guestSearchInput.length > 0) {
@@ -135,8 +134,7 @@ $(document).ready(function() {
     } 
   });
 
-  $(window).on('click', function () {
-    if(event.target.id === "guests__button--create") {
+  $('#guests__button--create').on('click', function () {
       let customerName = $("#guests__input--create").val();
       let newCustomer = new Customer(allData.customers, null, customerName);
       newCustomer.pushGuestIntoGuestArray(newCustomer)
@@ -149,14 +147,30 @@ $(document).ready(function() {
         newCustomer
       );
       let newRoomService = new RoomService(allData.services, newCustomer.id);
-      let newGuestBooking = new Booking(allData.bookings, newCustomer.id);
-      domUpdates.displaySelectedGuest(newCustomer);        
+      let newGuestBooking = new Booking(allData.bookings, newCustomer.id, dateToday());
+      domUpdates.displaySelectedGuest(newCustomer);
       newRoomService.filterAllOrdersBySpecificGuest(newCustomer);
       newRoomService.findTotalCostOfAllOrdersBySpecificGuest(newCustomer);
-      newGuestBooking.filterAllBookingsBySpecificGuest(newCustomer);
+      newGuestBooking.findTodaysBookingForSpecificGuest(newCustomer);
       // newGuestBooking.findTotalCostOfAllBookingsBySpecificGuest(newCustomer);
-    }
-  })
+      newGuestBooking.findTodaysBookingForSpecificGuest(newCustomer);
+      $('#rooms__button--reservation').on('click', function(){
+        let roomsAvailable = bookingRepo.filterRoomsAvailableToday(dateToday())
+        domUpdates.displayRoomsAvailableForSpecificGuest(roomsAvailable);
+        $('.guests__button--select').on('click', function() {
+          let reservedRoomId = $(this).attr('data-id')
+          let reservedRoom = bookingRepo.findCorrectRoom(reservedRoomId);
+          bookingRepo.pushBookingIntoBookingsArray(newGuestBooking, reservedRoom, dateToday())
+          let menu = newRoomService.createMenu()
+          domUpdates.displayTodaysBookingForSpecificGuestBookingToday(newCustomer, reservedRoom, menu);
+          $('.rooms__button--service').on('click', function(){
+            let foodItemId = $(this).attr('data-id')
+            let foodItem = newRoomService.findCorrectItem(foodItemId)
+            domUpdates.displayAdditionalFoodService(foodItem)
+          })
+        })
+      });
+  });
 
   $('#orders__btn--search').on('click', function(){
     let specificDate = $('#orders__input--date').val();
@@ -181,9 +195,4 @@ $(document).ready(function() {
     //add active class to new active tab
     $(this).addClass('active')
   })
-
-  // function findCorrectRoom(room){
-  //   console.log(room)
-  //   bookingRepo.findCorrectRoom(room)
-  // }
 });

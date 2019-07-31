@@ -1,5 +1,4 @@
 import domUpdates from "./domUpdates";
-import Customer from "./Customer";
 
 class GuestRepo {
     constructor (userData){
@@ -9,7 +8,6 @@ class GuestRepo {
 
     filterUsersBySearch(guestSearchInput){
         let lowerCaseSearch = guestSearchInput.toLowerCase()
-        console.log(this.data)
         let filteredGuests = this.data.filter(guest => guest.name.toLowerCase().includes(lowerCaseSearch));
         if (filteredGuests.length > 0){
             domUpdates.displaySearchedUsers(filteredGuests)

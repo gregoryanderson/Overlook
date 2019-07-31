@@ -1,13 +1,10 @@
 import domUpdates from "./domUpdates";
-import GuestRepo from "./guestRepo";
 
 class RoomService {
   constructor(services, menu, guestId) {
     this.services = services.roomServices;
     this.menu = this.createMenu();
     this.id = guestId;
-    console.log(this.services)
-    // this.info = this.updateToDom();
   }
 
   createMenu(){
@@ -23,10 +20,6 @@ class RoomService {
 
   findCorrectItem(foodId){
     return this.services.find(item => item.totalCost == foodId)
-  }
-
-  filterOrdersByDate(specDate) {
-    return this.data.filter(order => order.date === specDate);
   }
 
   filterAllOrdersBySpecificGuest(guest){
@@ -50,11 +43,6 @@ class RoomService {
     }, 0)
     domUpdates.displayTotalRoomServiceCostForSpecificUser(specificOrdersCost)
   }
-//   updateToDom() {
-//     domUpdates.displayRoomServiceOrdersForToday(
-//       this.filterOrdersByDate(this.date)
-//     );
-//   }
 }
 
 export default RoomService;
