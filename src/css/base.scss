@@ -2,19 +2,25 @@
 $primary-background:#bbdefb;
 
 * {
-  border: 1px solid red;
+  // border: 1px solid red;
   color: #333;
-  font-family: 'Asap', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
   background-color: $primary-background;
+  text-transform: uppercase
 }
 
-ul {
+p,
+ul,
+h1,
+h2,
+h3 {
     margin: 0;
     padding: 0;
 }
+
 
 li {
     list-style-type: none;
@@ -28,19 +34,79 @@ li {
     font-size: 1em;
     &:hover {
       color: #fff;
-      background: #666;
+      background:#42a5f5;
     }
 };
+
+.tab.active {
+  background-color: #64b5f6
+}
+
+.button {
+  &:hover {
+    background-color: #90caf9;
+  }
+}
+
+.rooms__button--service {
+  @extend .button
+}
+
+tbody tr:nth-child(odd) {
+  background-color:#c5cae9
+}
 
 .tab--information {
   background: #ededed;
   border-radius: 0 0 10px 10px;
-  // display: none;
+  display: none;
   padding: 15px;
+  h3 {
+    margin:0;
+    width:50%
+  }
+  &.active {
+    display: block;
+    height: 500px;
+    justify-content: center;
+  }
 }
 
-.tab--information.active {
+.scroll {
+  overflow:scroll;
+  height:200px;
+  width:100%;
+}
+
+#rooms__section--bottom,
+#rooms__section--top,
+#orders__section--top,
+#order__div--h3,
+.rooms__section--h3 {
   display: flex;
-  height: 400px;
-  justify-content: center;
+}
+
+.rooms__section--h3 {
+  margin-top: 10px
+}
+
+#room__h3--reservations,
+#customer--rooms-available,
+#guests__h3--searched,
+#guests__section--searched,
+#guests__section--new-guest,
+#rooms__section--guest,
+#rooms__section--bookings,
+#orders__div--searched,
+#orders__div--today,
+.rooms__section--reservation {
+  width: 50%
+}
+
+.rooms {
+  height:400px
+}
+
+#orders__h3--new {
+  margin-top: 75px
 }

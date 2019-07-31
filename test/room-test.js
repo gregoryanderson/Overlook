@@ -1,14 +1,26 @@
 import Room from '../src/Room'
-import { rooms } from '../data'
+import data from '../data'
 import chai from 'chai';
 import spies from 'chai-spies'
-import domUpdates from '../src/domUpdates'
 const expect = chai.expect;
 
+  describe("Room", function() {
 
+    let room
 
-describe('See if the tests are running', function() {
-    it('should return true', function() {
+    beforeEach(function (){
+        room = new Room(data, data, data,'2019/08/29')
+    });
+
+    it.only('should return true', function() {
       expect(true).to.equal(true);
     });
+
+    it.only('should be an function', function(){
+      expect(Room).to.be.a('function')
+    })
+
+    it.only('should be an instance of Room', function(){
+      expect(room).to.be.an.instanceOf(Room)
+    })
   });
