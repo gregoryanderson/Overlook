@@ -37,7 +37,6 @@ class RoomService {
         return order
       }
     }).reduce((totalCost, order) => {
-      console.log(order)
       totalCost += order.totalCost
       return totalCost
     }, 0)

@@ -1,37 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Overlook: How May I Help You?</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Asap:400,700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Overlook: How May We Help You?</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>OverLook</h1>
-    <h2>How May I Help You?</h2>
-    <h3 class="header--date">
-      Date
-    </h3>
-    <h3 id="header--selected-guest">
-        Selected Guest
-      </h3>
-    <!-- <img src="/images/turing-logo.png" alt="turing logo" height="100px" width="100px"> -->
+    <h1>OVERLOOK</h1>
+    <h2>HOW MAY WE HELP YOU?</h2>
+    <h3 class="header--date">DATE</h3>
+    <h3 id="header--selected-guest">PLEASE, SELECT A GUEST</h3>
     <ul class="tab__ul">
-      <li data-tab="tab--main" class="tab tab__li--main active">Overview</li>
-      <li data-tab="tab--guests" class="tab tab__li--customers">Customers</a></li>
-      <li data-tab="tab--bookings" class="tab tab__li--bookings">Bookings</a></li>
-      <li data-tab="tab--orders" class="tab tab__li--services">Services</a></li>
-      <li data-tab="tab--rooms" class="tab tab__li--rooms">Rooms</a></li>
+      <li data-tab="tab--main" class="tab tab__li--main active">OVERVIEW</li>
+      <li data-tab="tab--guests" class="tab tab__li--customers">CUSTOMERS</a></li> 
+      <li data-tab="tab--orders" class="tab tab__li--services">SERVICES</a></li>
+      <li data-tab="tab--rooms" class="tab tab__li--rooms">ROOMS</a></li>
+      <!-- <li data-tab="tab--bookings" class="tab tab__li--bookings">BOOKINGS</a></li> -->
     </ul>
-
-
-
-
-
-
-
-
     <article id="tab--main" class="tab--information active">
       <p id="main__avail-rooms"></p>
       <p id="main__revenue-today"></p>
@@ -39,214 +23,252 @@
       <p id="main__occupied-rate"></p>
       <p id="rooms__booking-high-date"></p>
       <p id="rooms__booking-low-date"></p>
+      <section class="rooms__section--h3">
+          <h3 id="room__h3--reservations">RESERVATIONS</h3>
+          <h3 id="customer--rooms-available">ROOMS AVAILABLE</h3>
+          </section>
+      <section id="rooms__section--bottom">
+          <section class="rooms__section--reservation">
+            <div class="scroll">
+              <table id="rooms__table--customer">
+                <thead>
+                  <tr>
+                    <th>ROOM NUMBER</th>
+                    <th>DATE BOOKED</th>
+                  </tr>
+                </thead>
+                <tbody id="room__tbody--booked">
+                </tbody>
+              </table>
+            </div>
+          </section>
+    
+          <section class="room__section--booked">
+            
+            <div class="scroll">
+              <table id="room__table--rooms-available">
+                <thead>
+                  <tr>
+                    <th>ROOM</th>
+                    <th>TYPE</th>
+                    <th>BED SIZE</th>
+                    <th>BEDS</th>
+                    <th>BIDET</th>
+                    <th>COST</th>
+                  </tr>
+                </thead>
+                <tbody id="rooms__tbody--available">
+                </tbody>
+              </table>
+            </div>
+            
+          </section>
+        </section>
     </article>
-
-
-
-
-
-
     <article id="tab--guests" class="tab--information">
-      <h3 id="guests__h3--searched">Search For Guest</h3>
-      <input type="search" id="guests__input--search">
+      <h3 id="guests__h3--searched">SEARCH FOR GUEST</h3>
+      <input type="text" id="guests__input--search">
+
+      <section id="guests__section--searched">
+      <div id="guests__div--searched" class="scroll">
       <table id="guests__table--searched">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>ID</th>
-              <th>Select</th>
-            </tr>
-          </thead>
-          <tbody id="guests__tbody--searched">
-          </tbody>
-        </table> 
-        <section id="guests__section--new-guest">
-          <p>Or, Please Enter a Name to Create a New Guest.</p>
-          <input type="text" id="guests__input--create">
-          <button id="guests__button--create">Create</button>
-        </section> 
-      <!-- <table>
-        <h3 id="guests__h3">Guests</h3>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>NAME</th>
             <th>ID</th>
           </tr>
         </thead>
-        <tbody id="guests__tbody--specific">
+        <tbody id="guests__tbody--searched">
         </tbody>
-      </table> -->
+      </table> 
+    </div>
+    </section>
+
+      <section id="guests__section--new-guest">
+        <p>OR, PLEASE ENTER A NAME FOR A NEW GUEST</p>
+        <input type="text" id="guests__input--create">
+        <button id="guests__button--create">CREATE</button>
+      </section> 
+      <div id="guests__div--specific"></div>
     </article>
-
-
-
-
-
 
 
     <article id="tab--orders" class="tab--information">
       <input type="date" id="orders__input--date">
-      <button id="orders__btn--search">Search Orders</button>
-      <table>
-        <h3 id="orders__h3--all">Food Orders</h3>
+      <button id="orders__btn--search">SEARCH ORDERS</button>
+      <div id="order__div--h3">
+      <h3 id="orders__h3--all">SEARCH THROUGH FOOD ORDERS</h3>
+      <h3 id="orders__h3--customer">FOOD ORDERS TODAY</h3>
+      </div>
+      <section id="orders__section--top">
+      <div id="orders__div--searched" class="scroll">
+      <table id="orders__table--searched">
         <thead>
           <tr>
-            <th>Food</th>
-            <th>Cost</th>
-            <th>Date</th>
+            <th>FOOD</th>
+            <th>COST</th>
+            <th>DATE</th>
           </tr>
         </thead>
         <tbody id="orders__tbody--searched">
         </tbody>
       </table>
+    </div>
+    <div id="orders__div--today" class="scroll">
       <table>
-        <h3 id="orders__h3--customer">Food Orders Today</h3>
         <thead>
           <tr>
-            <th>Order</th>
-            <th>Cost</th>
-            <!-- <th>Name</th> -->
+            <th>ORDER</th>
+            <th>COST</th>
           </tr>
         </thead>
         <tbody id="orders__tbody--today">
         </tbody>
       </table>
-      <table>
-        <h3 id="orders__h3--guest">Room Service for Specific Guest</h3>
+      </div>
+      </section>
+      <h3 id="orders__h3--guest">ROOM SERVICE FOR <span class="specific">SPECIFIC GUEST</span></h3>
+      <table id="orders__table--guest">
         <thead>
           <tr>
-            <th>Order</th>
-            <th>Cost</th>
-            <th>Date</th>
+            <th>ORDER</th>
+            <th>COST</th>
+            <th>DATE</th>
           </tr>
         </thead>
         <tbody id="orders__tbody--guest">
         </tbody>
       </table>
-          <section id="orders__section--total">
-          </section>
-          <section id="orders__section--new-order">
-          </section> 
+      <section id="orders__section--total">
+      </section>
+      <section id="orders__section--new-order">
+      </section> 
       <p id="orders--total"></p>
+      <h3 id="orders__h3--new">ROOM SERVICE <span class="specific">SPECIFIC GUEST</span> ORDERED TODAY</h3>
+      <table id="orders__table--new">
+          <thead>
+            <tr>
+              <th>ORDER</th>
+              <th>COST</th>
+              <!-- <th>DATE</th> -->
+            </tr>
+          </thead>
+          <tbody id="orders__tbody--new">
+          </tbody>
+        </table>
     </article>
 
 
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
     <article id="tab--rooms" class="tab--information">
-      <table>
-        <h3 id="rooms__h3--guest">All Bookings for Specific Guest</h3>
+      <section class="rooms__section--h3">
+      <h3 id="rooms__h3--guest">ALL BOOKINGS FOR A <span class="specific">SPECIFIC GUEST</span></h3>
+      <h3 id="rooms__h3--todays-booking">TODAYS BOOKINGS FOR A <span class="specific">SPECIFIC GUEST</span></h3>
+    </section>
+      <section id="rooms__section--top">
+        <section id="rooms__section--guest">
+      <div class="scroll">
+      <table id="rooms__table--guest">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Room</th>
-            <!-- <th>Date</th> -->
+            <th>DATE</th>
+            <th>ROOM</th>
           </tr>
         </thead>
         <tbody id="rooms__tbody--guest">
         </tbody>
       </table>
-          <section id="rooms__section--create-booking">
-          </section>
-                              <table>
-                                  <h3 id="rooms__h3--todays-booking">Todays Bookings for Specific Guest</h3>
-                                  <thead>
-                                    <tr>
-                                      <th>Name</th>
-                                      <th>Room</th>
-                                      <!-- <th>Date</th> -->
-                                    </tr>
-                                  </thead>
-                                  <tbody id="rooms__tbody--todays-booking">
-                                  </tbody>
-                                </table>
-                                <section id="rooms__section--new-order">
-                                </section>
-                                    <section id="rooms__section--new-orders">
-                                <table>
-                                    <thead>
-                                      <tr>
-                                        <th>Name</th>
-                                        <th>Room</th>
-                                        <!-- <th>Date</th> -->
-                                      </tr>
-                                    </thead>
-                                    <tbody id="rooms__tbody--todays-orders">
-                                    </tbody>
-                                  </table>
-                                    </section> 
-      <table id="rooms__table--customer">
-          <h3 id="room__h3--reservations">Reservations Today</h3>
-          <thead>
-            <tr>
-              <th>Room Number</th>
-              <th>Date Booked</th>
-            </tr>
-          </thead>
-          <tbody id="room__tbody--booked">
-          </tbody>
-        </table>
-        <section class="room__section--booked">
-          <form id="room__form--booked">
-          <legend>Book A Room</legend>
-          <label><input type="checkbox" name="room-type" value="residential suite"> Residential Suite</label>
-          <label><input type="checkbox" name="room-type" value="junior suite"> Junior Suite</label>
-          <label><input type="checkbox" name="room-type" value="suite"> Basic Suite</label>
-          <label><input type="checkbox" name="room-type" value="single room"> Single Room</label>
-          <label>
-            Date To Book
-            <input type="date" id="room-book-date">
-          </label>
-          <button id="room__btn--find-rooms" type="submit">Find Rooms</button>
-        </form>
-        <table id="room__table--rooms-available">
-          <h3 id="customer--rooms-available">Rooms Available</h3>
-          <thead>
-            <tr>
-              <th>Room</th>
-              <th>Type</th>
-              <th>Bed Size</th>
-              <th>Beds</th>
-              <th>Bidet</th>
-              <th>Cost</th>
-            </tr>
-          </thead>
-          <tbody id="rooms__tbody--available">
-          </tbody>
-        </table>
+    </div>
+  </section>
+  <section id="rooms__section--bookings">
+      <section id="rooms__section--create-booking">
       </section>
+      <div id="rooms__div--create-booking" class="scroll">
+      <table>
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>ROOM</th>
+              <th>SIZE</th>
+              <th>BEDS</th>
+              <th>BIDET</th>
+              <th>COST</th>
+            </tr>
+          </thead>
+          <tbody id="rooms__tbody--todays-booking">
+          </tbody>
+        </table>
+      </div>
+        <section id="rooms__section--new-order">
+        </section>
+        <section id="rooms__section--new-orders">
+          <div id="rooms__div--new-orders" class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>ROOM</th>
+            </tr>
+          </thead>
+          <tbody id="rooms__tbody--todays-orders">
+          </tbody>
+        </table>
+      </div>
+      </section>
+      </section>
+  </section>
     </article>
+      <article id="tab--bookings" class="tab--information">
+      <!-- <section class="rooms__section--h3">
+      <h3 id="room__h3--reservations">RESERVATIONS</h3>
+      <h3 id="customer--rooms-available">ROOMS AVAILABLE</h3>
+      </section> -->
+      <!-- <section id="rooms__section--bottom">
+      <section class="rooms__section--reservation">
+        <div class="rooms scroll">
+          <table id="rooms__table--customer">
+            <thead>
+              <tr>
+                <th>ROOM NUMBER</th>
+                <th>DATE BOOKED</th>
+              </tr>
+            </thead>
+            <tbody id="room__tbody--booked">
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-
-
-
-
-
-
-
-
-
- 
-      <!-- <article id="tab__customers" class="tab-information">
-        <input id="tab__input" type="search" placeholder="Search Customers">
-        <ul class="tab__ul">
-          <li id="no-users">No Users Found</li>
-        </ul>
-      </article> -->
-
-
-
-
-  </body>
+      <section class="room__section--booked">
+        
+        <div class="scroll rooms">
+          <table id="room__table--rooms-available">
+            <thead>
+              <tr>
+                <th>ROOM</th>
+                <th>TYPE</th>
+                <th>BED SIZE</th>
+                <th>BEDS</th>
+                <th>BIDET</th>
+                <th>COST</th>
+              </tr>
+            </thead>
+            <tbody id="rooms__tbody--available">
+            </tbody>
+          </table>
+        </div>
+        
+      </section>
+    </section> -->
+  </article>
+</body>
 </html>
+
+<!-- <form id="room__form--booked">
+  <legend>Book A Room</legend>
+  <label><input type="checkbox" name="room-type" value="residential suite"> Residential Suite</label>
+  <label><input type="checkbox" name="room-type" value="junior suite"> Junior Suite</label>
+  <label><input type="checkbox" name="room-type" value="suite"> Basic Suite</label>
+  <label><input type="checkbox" name="room-type" value="single room"> Single Room</label>
+  <label>Date To Book<input type="date" id="room-book-date"></label>
+  <button id="room__btn--find-rooms" type="submit">Find Rooms</button>
+</form> -->

@@ -98,12 +98,15 @@ $(document).ready(function() {
   }, 1000);
 
   $("#guests__input--search").on("input", function() {
+    $('#guests__div--searched').show()
     $('#guests__table--searched').show()
+    $('#orders__table--guest').show()
+    $('#rooms__table--guest').show()
     let guestSearchInput = $("#guests__input--search").val();
-    console.log(guestSearchInput);
     if (guestSearchInput.length > 0) {
       guestRepo.filterUsersBySearch(guestSearchInput);
       $(".guests__td--searched").on("click", function() {
+        $('#guests__table--searched').hide()
         let guestId = $(this).attr("data-id");
         customer = new Customer(allData.customers, guestId, undefined);
         roomService = new RoomService(allData.services, guestId);
@@ -112,12 +115,13 @@ $(document).ready(function() {
         roomService.filterAllOrdersBySpecificGuest(customer);
         roomService.findTotalCostOfAllOrdersBySpecificGuest(customer);
         guestBooking.filterAllBookingsBySpecificGuest(customer);
-        // guestBooking.findTotalCostOfAllBookingsBySpecificGuest(customer);
         guestBooking.findTodaysBookingForSpecificGuest(customer);
         $('#rooms__button--reservation').on('click', function(){
+          $('#rooms__div--create-booking').show();
           let roomsAvailable = bookingRepo.filterRoomsAvailableToday(dateToday())
           domUpdates.displayRoomsAvailableForSpecificGuest(roomsAvailable);
           $('.guests__button--select').on('click', function() {
+            $('#rooms__div--new-orders').show();
             let reservedRoomId = $(this).attr('data-id')
             let reservedRoom = bookingRepo.findCorrectRoom(reservedRoomId);
             bookingRepo.pushBookingIntoBookingsArray(guestBooking, reservedRoom, dateToday())
@@ -135,6 +139,10 @@ $(document).ready(function() {
   });
 
   $('#guests__button--create').on('click', function () {
+      $('#guests__div--searched').show()
+      $('#guests__table--searched').show()
+      $('#orders__table--guest').show()
+      $('#rooms__table--guest').show()
       let customerName = $("#guests__input--create").val();
       let newCustomer = new Customer(allData.customers, null, customerName);
       newCustomer.pushGuestIntoGuestArray(newCustomer)
@@ -152,14 +160,16 @@ $(document).ready(function() {
       newRoomService.filterAllOrdersBySpecificGuest(newCustomer);
       newRoomService.findTotalCostOfAllOrdersBySpecificGuest(newCustomer);
       newGuestBooking.findTodaysBookingForSpecificGuest(newCustomer);
-      // newGuestBooking.findTotalCostOfAllBookingsBySpecificGuest(newCustomer);
       newGuestBooking.findTodaysBookingForSpecificGuest(newCustomer);
       $('#rooms__button--reservation').on('click', function(){
+        $('#rooms__div--create-booking').show();
         let roomsAvailable = bookingRepo.filterRoomsAvailableToday(dateToday())
         domUpdates.displayRoomsAvailableForSpecificGuest(roomsAvailable);
         $('.guests__button--select').on('click', function() {
+          $('#rooms__div--new-orders').show();
           let reservedRoomId = $(this).attr('data-id')
           let reservedRoom = bookingRepo.findCorrectRoom(reservedRoomId);
+          console.log(reservedRoom)
           bookingRepo.pushBookingIntoBookingsArray(newGuestBooking, reservedRoom, dateToday())
           let menu = newRoomService.createMenu()
           domUpdates.displayTodaysBookingForSpecificGuestBookingToday(newCustomer, reservedRoom, menu);
@@ -172,27 +182,45 @@ $(document).ready(function() {
       });
   });
 
+  $(window).on('click', function(){
+    if(event.target.id === 'rooms__button--no-thanks'){
+    $('#rooms__section--new-order').hide();
+    $('#rooms__tbody--todays-orders').hide();
+    $('#rooms__div--new-orders').hide()
+    }
+    if(event.target.id === 'unbook--newReservation'){
+      let unbookId = $(this).attr('data-id')
+      console.log(unbookId)
+    }
+  })
+
   $('#orders__btn--search').on('click', function(){
+    $('#orders__table--searched').show()
     let specificDate = $('#orders__input--date').val();
     let configuredDate = configureDate(specificDate);
     let ordersOfDate = orderRepo.filterOrdersByDate(configuredDate);
     domUpdates.displayRoomServiceOrdersForSpecificDate(ordersOfDate);
+  })
+  
+  $('.tab').on('click', function (){
+    let tabSelector = $(this).data('tab');
+    $('.active').removeClass('active')
+    $(`#${tabSelector}`).addClass('active')
+    $(this).addClass('active')
   })
 
   function configureDate(date){
     let dateArray = date.split('-');
     return dateArray[0] + '/' + dateArray[1] + '/' + dateArray[2];
   }
-
-  $('.tab').on('click', function (){
-    let tabSelector = $(this).data('tab');
-    //remove active class from active class
-    $('.active').removeClass('active')
-    //add active class to the tab contents with tab selector
-    $(`#${tabSelector}`).addClass('active')
-    //remove active class from old active tab
-
-    //add active class to new active tab
-    $(this).addClass('active')
+  
+  $(window).on('load', function(){
+    $('#guests__table--searched').hide();
+    $('#rooms__div--create-booking').hide();
+    $('#rooms__div--new-orders').hide();
+    $('#orders__table--searched').hide()
+    $('#orders__table--new').hide()
+    $('#orders__table--guest').hide()
+    $('#rooms__table--guest').hide()
   })
 });
