@@ -26,4 +26,4 @@ Overlook is a mockup of a hotel management app. I used fetched JSON data and a n
 ![My comp](images/overlook1.png)
 ![MY comp](images/overlook2.png)
 ![My comp](images/overlook3.png)
-![My GIF](images/overlookGIF.gif)
+![My comp - GIF](images/OverlookGIF.gif)
